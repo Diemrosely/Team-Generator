@@ -29,3 +29,7 @@ li{
 .card-body{
     background: #d0d9d4;
 }
+
+.card{
+    margin: 10px;
+}
