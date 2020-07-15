@@ -1,0 +1,31 @@
+.jumbotron{
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
+h1{
+    font-family: american typewriter;
+    font-size: 100px;
+    color: 	whitesmoke;
+}
+
+.card-header{
+    background: #bbc9c2;
+    text-align: center;
+    color: darkslategray;
+}
+
+h2, h3{
+    font-size: 22px;
+    font-family: monospace;
+}
+
+li{
+    font-family: monospace;
+
+}
+
+.card-body{
+    background: #d0d9d4;
+}
