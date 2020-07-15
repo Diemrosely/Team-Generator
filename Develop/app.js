@@ -17,7 +17,7 @@ const idArray = [];
             inquirer.prompt([{
                     type: "input",
                     name: "managerName",
-                    message: "What is your manager's name?",
+                    message: "What is the employee's name?",
                     validate: answer => {
                         if (answer !== "") {
                             return true;
@@ -28,7 +28,7 @@ const idArray = [];
                 {
                     type: "input",
                     name: "managerId",
-                    message: "What is your manager's id?",
+                    message: "What is the employee's Id?",
                     validate: answer => {
                         const pass = answer.match(
                             /^[1-9]\d*$/
@@ -43,7 +43,7 @@ const idArray = [];
                 {
                     type: "input",
                     name: "managerEmail",
-                    message: "What is your manager's email?",
+                    message: "What is the employee's email?",
                     validate: answer => {
                         const pass = answer.match(
                             /\S+@\S+\.\S+/
@@ -57,7 +57,7 @@ const idArray = [];
                 {
                     type: "input",
                     name: "managerOfficeNumber",
-                    message: "What is your manager's office number?",
+                    message: "What is the employee's office number?",
                     validate: answer => {
                         const pass = answer.match(
                             /^[1-9]\d*$/
@@ -113,7 +113,7 @@ const idArray = [];
             inquirer.prompt([{
                     type: "input",
                     name: "engineerName",
-                    message: "What is your enginer's name",
+                    message: "What is the employee's name?",
                     validate: answer => {
                         if (answer !== "") {
                             return true;
@@ -124,7 +124,7 @@ const idArray = [];
                 {
                     type: "input",
                     name: "engineerId",
-                    message: "What is your engineer's id?",
+                    message: "What is the employee's Id?",
                     validate: answer => {
                         const pass = answer.match(
                             /^[1-9]\d*$/
@@ -142,7 +142,7 @@ const idArray = [];
                 {
                     type: "input",
                     name: "engineerEmail",
-                    message: "What is your engineer's email?",
+                    message: "What is the employee's email?",
                     validate: answer => {
                         const pass = answer.match(
                             /\S+@\S+\.\S+/
@@ -156,7 +156,7 @@ const idArray = [];
                 {
                     type: "input",
                     name: "engineerGithub",
-                    message: "What is your engineer's github username?",
+                    message: "What is the employee's github username?",
                     validate: answer => {
                         if (answer !== "") {
                             return true;
@@ -176,7 +176,7 @@ const idArray = [];
                 inquirer.prompt([{
                         type: "input",
                         name: "internName",
-                        message: "What is your intern's name",
+                        message: "What is the employee's name?",
                         validate: answer => {
                             if (answer !== "") {
                                 return true;
@@ -187,14 +187,14 @@ const idArray = [];
                     {
                         type: "input",
                         name: "internId",
-                        message: "What is your intern's id?",
+                        message: "What is the employee's id?",
                         validate: answer => {
                             const pass = answer.match(
                                 /^[1-9]\d*$/
                             );
                             if (pass) {
                                 if (idArray.includes(answer)) {
-                                    return "This ID is already taken.  Please enter a different number";
+                                    return "This ID is already taken.  Please enter a different Id number";
                                 } else {
                                     return true;
 
@@ -208,7 +208,7 @@ const idArray = [];
                     {
                         type: "input",
                         name: "internEmail",
-                        message: "What is your intern's email?",
+                        message: "What is the employee's email?",
                         validate: answer => {
                             const pass = answer.match(
                                 /\S+@\S+\.\S+/
@@ -222,7 +222,7 @@ const idArray = [];
                     {
                         type: "input",
                         name: "internSchool",
-                        message: "What is your intern's school?",
+                        message: "What is the employee's current university?",
                         validate: answer => {
                             if (answer !== "") {
                                 return true;
@@ -233,7 +233,7 @@ const idArray = [];
 
 
                 ]).then(answers => {
-                    const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answer.internSchool);
+                    const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
                     teamMembers.push(intern);
                     idArray.push(answers.internId);
                     createTeam();
